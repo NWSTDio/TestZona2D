@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MouseClick/_scenes/MouseClickScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/OpenFileInDirectory/_scenes/OpenFileInDirectoryScene.unity
+    guid: 06493f77bf01f7c46aaeeee267d511b9
   m_configObjects: {}

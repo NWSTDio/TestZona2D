@@ -1,0 +1,69 @@
+Получение полного пути к файлу с заданным расширением (работает в редакторе, android и ios)
+
+1. Необходима установка плагина NativeFilePicker без него работать не будет!
+2. Порядок использования плагина:
+    2.1 создать метод запуска например Load
+        private void Load() {
+
+            }
+    2.2 желательно поместить проверку, не используется ли на данный момент импорт или экспорт файла, для предотвращения ошибок плагина
+        ...
+            if (NativeFilePicker.IsFilePickerBusy())
+                return;
+        ...
+    2.3 указать необходимые расширения для файлов, по одному, например для 3 видов изображений!
+        ...
+            string png = NativeFilePicker.ConvertExtensionToFileType("png");
+            string jpg = NativeFilePicker.ConvertExtensionToFileType("jpg");
+            string jpeg = NativeFilePicker.ConvertExtensionToFileType("jpeg");
+        ...
+    2.4 вызвать окно просмотра файлов (path - полный путь к файлу)
+        ...
+            NativeFilePicker.Permission permission = NativeFilePicker.PickFile((path) => {
+                if (path == null) // что-то пошло не так, или пользователь нажал отмену
+                    return;
+
+                ***
+            }, new string[] { png, jpg, jpeg });
+        ...
+
+        *** вызвать метод обработки полученных данных после закрытия окна выбора файла
+
+3. использование полученных данных (полного пути к файлу)
+    3.1 например создать текстуру, 
+        private Texture2D CreateTexture(string path) {
+            _pic = File.ReadAllBytes(path);// считаем весь файл
+
+            var loadTexture = new Texture2D(1, 1);// создадим текстуру
+
+            return loadTexture.LoadImage(_pic);// получим текстуру
+            }
+
+!!! почему желательно работать с возратившимися данными (path) именно внутри NativeFilePicker.PickFile(),
+    потому что может не вернутся ничего в path, например пользователь отменил действие, или еще по каким причинам
+    а код будет дальше пробовать грузить файл, по пути которого нет!
+
+Оригинал: https://github.com/yasirkula/UnityNativeFilePicker
+
+Любое расширение файла:
+    Если мы хотим видеть файлы с любым расширением то пишем в пункте 2.3
+        ...
+            string all = NativeFilePicker.ConvertExtensionToFileType("*");
+        ...
+    А в пункте 2.4 во втором параметре для метода PickFile() убераем все элементы и ставим элемент all
+        ...
+            }, new string[] { all });// открываем просмотр файлов
+        ...
+
+Данный плагин может и сохранять данные (не понимаю зачем, File.WriteAllText() итак создаст файл)
+    string path = Application.persistentDataPath + "/test.txt";
+
+    File.WriteAllText(path, "Hello world!");
+
+    NativeFilePicker.Permission permission = NativeFilePicker.ExportFile(path, (success) => {
+        Debug.Log("File exported: " + success);
+    });
+    *** интересно то что, файл создается в WriteAllText(path, "Hello world!"); а потом появляется окно с выбором сохранить файл в другом месте
+    Эдинственное применение: создавать временный файл в системном каталоге игры Application.persistentDataPath + "/test.txt", 
+        а потом показывать окно где можно сохранить файл в другом месте, но есть проблема:
+            пользователь увидит папку с данными игры
