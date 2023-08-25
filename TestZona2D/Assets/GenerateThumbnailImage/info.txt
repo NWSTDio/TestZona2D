@@ -1,0 +1,12 @@
+генерация уменьшенного изображения для предварительного просмотра (thumbnail)
+
+1. нужна основная 2д текстура, которую будем уменьшать
+2. получим уменьшенную текстуру tex через метод CompressImage(texture, size);
+    - size принимает значение от .1f до .9f, что указывает на процент уменьшение изображения
+3. приминение:
+    3.1 сохранение изображения в указанном каталоге в формате png
+        File.WriteAllBytes(Application.persistentDataPath + "/image", tex.EncodeToPNG());
+        или в jpg
+        File.WriteAllBytes(Application.persistentDataPath + "/image", texture.EncodeToJPG());
+    3.2 получения спрайта
+        Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(.5f, .5f), 100f, 0, SpriteMeshType.FullRect);
