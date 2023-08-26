@@ -72,7 +72,5 @@ crashlytics-build.properties
 [Aa]ssets/[Ss]treamingAssets/aa/*
 */Assets/WorldGenerator.meta
 */Assets/WorldGenerator/*
-*/Assets/SaveInFile.meta
-*/Assets/SaveInFile/*
 */Assets/BezierCurve.meta
 */Assets/BezierCurve/*
