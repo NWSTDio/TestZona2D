@@ -74,3 +74,5 @@ crashlytics-build.properties
 */Assets/WorldGenerator/*
 */Assets/BezierCurve.meta
 */Assets/BezierCurve/*
+*/Assets/SimpleCode.meta
+*/Assets/SimpleCode/*
