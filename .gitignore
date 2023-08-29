@@ -76,3 +76,15 @@ crashlytics-build.properties
 */Assets/BezierCurve/*
 */Assets/SimpleCode.meta
 */Assets/SimpleCode/*
+*/Assets/TestAnimations.meta
+*/Assets/TestAnimations/*
+*/Assets/SimpleRotationOfBezier.meta
+*/Assets/SimpleRotationOfBezier/*
+*/Assets/SimplePathGenerator.meta
+*/Assets/SimplePathGenerator/*
+*/Assets/Plugins/NWSTDio.meta
+*/Assets/Plugins/NWSTDio/*
+*/Assets/TestJoints.meta
+*/Assets/TestJoints/*
+*/Assets/Lessons.meta
+*/Assets/Lessons/*

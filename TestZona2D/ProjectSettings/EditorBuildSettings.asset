@@ -4,8 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/CameraZoomSwipe/_scene/CameraZoomSwipeScene.unity
-    guid: bd1a30815c832904cbd3518ee82b5d9c
+  m_Scenes: []
   m_configObjects: {}
