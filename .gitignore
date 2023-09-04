@@ -78,13 +78,13 @@ crashlytics-build.properties
 */Assets/SimpleCode/*
 */Assets/TestAnimations.meta
 */Assets/TestAnimations/*
-*/Assets/SimpleRotationOfBezier.meta
-*/Assets/SimpleRotationOfBezier/*
-*/Assets/SimplePathGenerator.meta
-*/Assets/SimplePathGenerator/*
 */Assets/Plugins/NWSTDio.meta
 */Assets/Plugins/NWSTDio/*
+*/Assets/Plugins/Zenject.meta
+*/Assets/Plugins/Zenject/*
 */Assets/TestJoints.meta
 */Assets/TestJoints/*
 */Assets/Lessons.meta
 */Assets/Lessons/*
+*/Assets/ZenjectTests.meta
+*/Assets/ZenjectTests/*
