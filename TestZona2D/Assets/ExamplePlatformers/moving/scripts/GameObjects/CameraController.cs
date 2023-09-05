@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SimplePlatformer {
+namespace ExamplePlatformer.moving {
 	public class CameraController : MonoBehaviour {
 
 		[SerializeField] private Transform _target;// цель за кем следовать

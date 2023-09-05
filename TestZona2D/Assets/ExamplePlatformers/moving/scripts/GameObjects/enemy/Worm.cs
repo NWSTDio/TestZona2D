@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SimplePlatformer {
+namespace ExamplePlatformer.moving {
 	public class Worm : Entity { // червяк
 
 		private int _lives = 3;// жизни

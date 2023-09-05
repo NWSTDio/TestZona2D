@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SimplePlatformer {
+namespace ExamplePlatformer.moving {
 	[RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 	public class Player : Entity {
 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SimplePlatformer {
+namespace ExamplePlatformer.moving {
 	public class WalkingMonster : Entity { // подвижный монстр
 
 		[SerializeField] private SpriteRenderer _sprite;

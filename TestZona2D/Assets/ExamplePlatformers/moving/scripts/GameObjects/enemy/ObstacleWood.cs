@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SimplePlatformer {
+namespace ExamplePlatformer.moving {
 	public class ObstacleWood : MonoBehaviour { // деревянный пенек
 
 		private void OnCollisionEnter2D(Collision2D collision) {

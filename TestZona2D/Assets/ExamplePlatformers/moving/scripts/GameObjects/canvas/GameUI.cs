@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace SimplePlatformer {
+namespace ExamplePlatformer.moving {
     public class GameUI : MonoBehaviour {
 
         public static GameUI Instance { get; private set; }
