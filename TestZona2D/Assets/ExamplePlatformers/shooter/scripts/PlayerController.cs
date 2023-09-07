@@ -5,9 +5,11 @@ namespace ExamplePlatformers.shooter {
 
         [SerializeField] private Gun _gun;// пушка
         [SerializeField] private float speed;// скорость игрока
-        [SerializeField] private float _deadZoneRight = 135, _deadZoneLeft = 45;// сертвые зоны за которыми не будет срабатывать поворт
+        [SerializeField, Range(0, 45)] private int _deadZoneAngle;// для просчета мертвой зоны
 
+        private readonly float _startAngle = 90;// начальный угол проверки
         private Rigidbody2D rb;
+        private bool _isMouseInPlayer;// если курсор над игроком
 
         private bool IsRightFace => transform.localScale.x >= 0;// направление взгляда игрока
 
@@ -21,11 +23,14 @@ namespace ExamplePlatformers.shooter {
             rb.velocity = new Vector2(xAxisMovement * speed, rb.velocity.y);// двигаем игрока
 
             if (xAxisMovement == 0) { // если стоим
+                if (_isMouseInPlayer) // если курсор над игроком
+                    return;
+
                 float rotation = Mathf.Abs(_gun.rotationZ);
 
-                if (IsRightFace && rotation > _deadZoneRight) // если смотрим вправо и угол больше мертвой зоны справа
+                if (IsRightFace && rotation > _startAngle + _deadZoneAngle) // если смотрим вправо и угол больше мертвой зоны справа
                     Flip();
-                else if (IsRightFace == false && rotation < _deadZoneLeft) // если смотрим влево и угол больше мертвой зоны слева
+                else if (IsRightFace == false && rotation < _startAngle - _deadZoneAngle) // если смотрим влево и угол больше мертвой зоны слева
                     Flip();
                 }
             else { // если в движении
@@ -34,8 +39,16 @@ namespace ExamplePlatformers.shooter {
                 else if (IsRightFace == false && xAxisMovement > 0)
                     Flip();
                 }
-
             }
+
+        private void OnMouseOver() { // курсор над игроком
+            _isMouseInPlayer = true;
+            }
+
+        private void OnMouseExit() { // курсор покинул игрока
+            _isMouseInPlayer = false;
+            }
+
         private void Flip() { // отражение игрока
             Vector3 scale = transform.localScale;
 
