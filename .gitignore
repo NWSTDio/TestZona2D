@@ -92,5 +92,7 @@ crashlytics-build.properties
 /Assets/TestProjects/*
 /Assets/ExampleRegularExpression.meta
 /Assets/ExampleRegularExpression/*
-/Assets/ExampleGameMehanics.meta
-/Assets/ExampleGameMehanics/*
+/Assets/ExampleGameMehanics/CameraShake.meta
+/Assets/ExampleGameMehanics/CameraShake/
+/Assets/ExampleGameMehanics/FormattingNumbers.meta
+/Assets/ExampleGameMehanics/FormattingNumbers/
