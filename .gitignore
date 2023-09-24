@@ -92,3 +92,9 @@ crashlytics-build.properties
 /Assets/TestProjects/*
 /Assets/ExampleRegularExpression.meta
 /Assets/ExampleRegularExpression/*
+/Assets/ViewProjects.meta
+/Assets/ViewProjects/*
+/Assets/ExampleParticles.meta
+/Assets/ExampleParticles/*
+/Assets/ExampleGameMehanics/TrailRenderer.meta
+/Assets/ExampleGameMehanics/TrailRenderer/*
