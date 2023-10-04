@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ExampleWorkEditor.TestAnimations {
+namespace ExampleWorkEditor.TestAnimations.version_1 {
     [RequireComponent(typeof(Animator))]
     public class TestAnimation : MonoBehaviour {
 

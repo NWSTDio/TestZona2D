@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace ExampleWorkEditor.TestAnimations {
+namespace ExampleWorkEditor.TestAnimations.version_1 {
     [RequireComponent(typeof(Animator))]
-    public class TestAnimationPlay : MonoBehaviour {
+    public class AnimationTest : MonoBehaviour {
 
         private Animator _animator;
 
@@ -12,10 +12,7 @@ namespace ExampleWorkEditor.TestAnimations {
 
         private void Update() {
             if (Input.GetKeyUp(KeyCode.Space))
-                _animator.Play("rotate");
-
-            if (Input.GetKeyUp(KeyCode.UpArrow))
-                _animator.SetBool("rotate2", _animator.GetBool("rotate2") == false);
+                _animator.SetInteger("state", 1);
             }
 
         }

@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace ExampleWorkEditor.TestAnimations {
+namespace ExampleWorkEditor.TestAnimations.version_1 {
     [RequireComponent(typeof(Animator))]
-    public class AnimationTest : MonoBehaviour {
+    public class TriggerTest : MonoBehaviour {
 
         private Animator _animator;
 
@@ -11,8 +11,8 @@ namespace ExampleWorkEditor.TestAnimations {
             }
 
         private void Update() {
-            if (Input.GetKeyUp(KeyCode.Space))
-                _animator.SetInteger("state", 1);
+            if (Input.GetKeyUp(KeyCode.Q))
+                _animator.SetTrigger("TestTriggerZipp");
             }
 
         }
