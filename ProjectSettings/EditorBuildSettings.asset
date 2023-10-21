@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/TestZona/project_1/_scenes/MenuScene.unity
-    guid: 6be20ca2f0ce5f84097e49233f7e9d28
-  - enabled: 1
-    path: Assets/TestZona/project_1/_scenes/GameScene.unity
-    guid: 9c4473b1cbad2d44785da288152201c0
+    path: Assets/GameMehanics/MoveInSlope/_scenes/MoveInSlopeLandscapeScene.unity
+    guid: 4fa64c22e789dce40b6a0d9358585b4f
   m_configObjects: {}
