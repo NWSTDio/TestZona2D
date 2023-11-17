@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1858c420c56107a449c24d093de07131, type: 3}
+  m_Name: player_data
+  m_EditorClassIdentifier: 
+  _walkSpeed: 10
+  _jumpSpeed: 25
+  _runSpeed: 15
+  _airSpeed: 8
+  _amountOfJumps: 1
+  _groundCheckRadius: 0.38
+  _slopeCheckDistance: 0.6
+  _wallCheckDistance: 0.45
+  _slopeDownCheckDistance: 0.1
+  _wallSlideSpeed: 5
+  _wallClimbSpeed: 5
+  _maxSlopeAngle: 50
+  _jumpHeightMultiplier: 0.5
+  _whatIsGround:
+    serializedVersion: 2
+    m_Bits: 128
+  _noFriction: {fileID: 6200000, guid: a4bdca4b67f40e44b92cd2769f40204e, type: 2}
+  _fullFriction: {fileID: 6200000, guid: fafd4a3d7955c2f4f913bd7db1e32678, type: 2}
+  _startOffset: {x: 0.4, y: 0.6}
+  _finishOffset: {x: 0.4, y: 1}
+  _crouchSpeed: 3
