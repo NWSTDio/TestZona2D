@@ -13,8 +13,10 @@ namespace GameMehanics.MoveInSlope {
 
 		[SerializeField] private PlayerData _data;// данные игрока
 		[SerializeField] private Transform _groundCheck, _wallCheck, _ledgeCheck, _ceilingCheck;// точки для проверки
+		[SerializeField] private bool _drawGizmos;
 
 		private Rigidbody2D _body;
+		private Animator _animator;
 		private CapsuleCollider2D _collider;
 		private MenuUI _menu;
 		private JumpState _jump;// состояние прыжка
@@ -23,6 +25,7 @@ namespace GameMehanics.MoveInSlope {
 		public Ladder Ladder { get; private set; } // лестница
 
 		public PlayerData PlayerData => _data;
+		public Animator Animations => _animator;
 		public Vector3 Position => transform.position;
 		public bool IsFalling => CurrentVelocity.y.Round() <= 0;// падаю ли
 		public bool IsLadder => Ladder != null;// есть ли лестница
@@ -59,6 +62,7 @@ namespace GameMehanics.MoveInSlope {
 			InputHandler = GetComponent<PlayerInputHandler>();
 			_body = GetComponent<Rigidbody2D>();
 			_collider = GetComponent<CapsuleCollider2D>();
+			_animator = GetComponent<Animator>();
 			_startPos = Position;
 			_gravityScale = _body.gravityScale;
 			}
@@ -105,6 +109,9 @@ namespace GameMehanics.MoveInSlope {
 				} // если лестницы нет, то забудем ее
 			}
 		private void OnDrawGizmos() {
+			if(_drawGizmos == false)
+				return;
+
 			Gizmos.color = Color.red;
 			Gizmos.DrawWireSphere(_groundCheck.position, _data.GroundCheckRadius);
 			Gizmos.DrawWireSphere(_ceilingCheck.position, _data.GroundCheckRadius);

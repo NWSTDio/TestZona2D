@@ -33,6 +33,8 @@ namespace GameMehanics.MoveInSlope {
 			PhysicsUpdate();
 
 			IsExitingState = false;
+
+			Player.Animations.SetBool(NameState, true);
 			}
 		public virtual void LogicUpdate() { }
 		public virtual void PhysicsUpdate() { }
@@ -43,6 +45,8 @@ namespace GameMehanics.MoveInSlope {
 				Debug.Log("Exit: " + NameState);
 
 			IsExitingState = true;
+
+			Player.Animations.SetBool(NameState, false);
 			}
 		}
 	}
